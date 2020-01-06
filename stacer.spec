@@ -4,7 +4,7 @@
 #
 Name     : stacer
 Version  : 1.1.0
-Release  : 1
+Release  : 2
 URL      : https://github.com/oguzhaninan/Stacer/archive/v1.1.0.tar.gz
 Source0  : https://github.com/oguzhaninan/Stacer/archive/v1.1.0.tar.gz
 Summary  : Ubuntu System Optimizer
@@ -69,7 +69,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1578151177
+export SOURCE_DATE_EPOCH=1578329038
 mkdir -p clr-build
 pushd clr-build
 # -Werror is for werrorists
@@ -86,7 +86,7 @@ make  %{?_smp_mflags}  VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1578151177
+export SOURCE_DATE_EPOCH=1578329038
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/stacer
 cp %{_builddir}/Stacer-1.1.0/LICENSE %{buildroot}/usr/share/package-licenses/stacer/31a3d460bb3c7d98845187c716a30db81c44b615
