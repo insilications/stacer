@@ -1,0 +1,29 @@
+From f0a30c8676568eefaba736be0bd0e03961d94223 Mon Sep 17 00:00:00 2001
+From: insilications <boboniboni@gmail.com>
+Date: Sun, 22 Nov 2020 03:48:00 -0300
+Subject: [PATCH] Remove cmake flto
+
+---
+ stacer/CMakeLists.txt | 6 ------
+ 1 file changed, 6 deletions(-)
+
+diff --git a/stacer/CMakeLists.txt b/stacer/CMakeLists.txt
+index b1db63b..5105388 100644
+--- a/stacer/CMakeLists.txt
++++ b/stacer/CMakeLists.txt
+@@ -42,12 +42,6 @@ target_link_libraries(${PROJECT_NAME}
+   stacer-core  Qt5::Core  Qt5::Gui  Qt5::Widgets  Qt5::Charts  Qt5::Svg  Qt5::Concurrent
+ )
+ 
+-# Running LTO in Release builds, if the C++ compiler is GNU GCC
+-if("${CMAKE_BUILD_TYPE}" STREQUAL "Release"  AND  "${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
+-  target_compile_options(${PROJECT_NAME}  PRIVATE  "-flto")
+-  list(APPEND CMAKE_EXE_LINKER_FLAGS "-flto")
+-endif()
+-
+ install(
+   TARGETS  ${PROJECT_NAME}
+   CONFIGURATIONS Release RelWithDebInfo MinSizeRel # Not allowing to install an unoptimized build
+-- 
+2.28.0
+

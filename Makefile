@@ -1,5 +1,5 @@
 PKG_NAME := stacer
-URL = 
+URL = https://github.com/oguzhaninan/Stacer.git
 ARCHIVES = 
 
 include ../common/Makefile.common
